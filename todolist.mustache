@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>To-do-list</title>
+<script src="todolist.js"></script>
+</head>
+<body>
+<h1>To-do-list</h1>
+<ul>
+  {{#todos}}
+
+  {{#yetTodo}}
+    <li>
+    <form action="/complete" method="post">
+      <input type="submit" name="list" value="{{todo}}" /> {{todo}}
+    </form>
+    </li>
+    {{/yetTodo}}
+    {{/todos}}
+</ul>
+<h1>Completed things</h1>
+<ul>
+  {{#todos}}
+  {{^yetTodo}}
+  <li class="completed">
+    {{todo}}
+  </li>
+  {{/yetTodo}}
+</ul>
+{{/todos}}
+{{^todos}}
+<h2>Nothin to do!</h2>
+{{/todos}}
+
+</form>
+
+</body>
+</html>
