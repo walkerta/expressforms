@@ -4,7 +4,7 @@ const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser');
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
-app.set('view', './view');
+app.set('views', './views');
 app.use(bodyParser.urlencoded({extended: true}));
 
 
@@ -19,15 +19,16 @@ app.get("/", function (req, res) {
 });
 
 app.post('/complete',function (req, res){
-  console.log(req.body)
+  console.log(req.body);
+  finishedList.push('');
   res.redirect('/');
 })
 
 app.post("/", function (req, res) {
-  list.push({todo:req.body.todo, yetTodo: true});
+  list.push({todo:req.body.addTodo, yetTodo: true});
   res.redirect('/');
 })
 
 app.listen(3000, function(){
-  console.log('Is it over yet')
+  console.log('Is it over yet');
 })

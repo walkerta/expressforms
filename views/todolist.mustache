@@ -3,10 +3,17 @@
 <head>
 <meta charset="utf-8">
 <title>To-do-list</title>
-<script src="todolist.js"></script>
+<script src="../views/todolist.js"></script>
 </head>
 <body>
 <h1>To-do-list</h1>
+
+
+<form action="/" method="post">
+  <input type="text" name="addTodo" placeholder="add todo list here" />
+  <button type="submit"> Send</button>
+</form>
+
 <ul>
   {{#todos}}
 
